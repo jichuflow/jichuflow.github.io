@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bar móvil premium para eventos. Coctelería artesanal en bodas, fiestas y eventos corporativos con servicio personalizado.">
+  <meta name="keywords" content="coctelería, bartender, eventos, bodas, mojitos, margaritas, bar móvil">
+  <title>El BAR DE PINZON| Coctelería clasica y de Autor para Eventos Exclusivos</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome (Iconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #8B0000; /* Rojo vino */
+      --secondary-color: #D4AF37; /* Dorado */
+      --dark-color: #1A1A1A;
+      --light-color: #F8F8F8;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--dark-color);
+      background-color: var(--light-color);
+      overflow-x: hidden;
+    }
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(26, 26, 26, 0.9);
+      padding: 1.5rem 2rem;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .logo {
+      color: var(--light-color);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .logo span {
+      color: var(--secondary-color);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: var(--light-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--secondary-color);
+    }
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+    }
+    /* Hero Section */
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(portada.jpg) no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
+    }
+    .hero-content p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease;
+    }
+    .cta-button {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      animation: fadeIn 1.5s ease;
+    }
+    .cta-button:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    /* Secciones */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--primary-color);
+    }
+    /* Sobre Mí */
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-img {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .about-img img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s;
+    }
+    .about-img img:hover {
+      transform: scale(1.05);
+    }
+    /* Servicios */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .service-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+    .service-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+    }
+    /* Testimonios */
+    .testimonials {
+      background-color: var(--dark-color);
+      color: white;
+      text-align: center;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    .testimonial-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1rem;
+    }
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .testimonial-card .name {
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+    /* Galería */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .gallery-item img:hover {
+      transform: scale(1.1);
+    }
+    /* Contacto */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .contact-icon {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: 'Raleway', sans-serif;
+    }
+    .contact-form textarea {
+      height: 150px;
+    }
+    .contact-form button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .contact-form button:hover {
+      background-color: var(--secondary-color);
+    }
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      text-align: left;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .footer-logo span {
+      color: var(--secondary-color);
+    }
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: var(--secondary-color);
+    }
+    .footer-links h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1.5rem;
+      color: var(--secondary-color);
+    }
+    .footer-links ul {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover {
+      color: var(--secondary-color);
+    }
+    .copyright {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    /* WhatsApp Flotante */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      transition: all 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #128C7E;
+    }
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+        color: white;
+        font-size: 1.5rem;
+      }
+      .about-container,
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">El Bar de <span>Pinzón</span></div>
+    <div class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre-mi">Sobre Mí</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="inicio">
+    <div class="hero-content">
+      <h1>Coctelería clasica y de Autor para Momentos Únicos</h1>
+      <p>Servicio premium de bar para bodas, eventos corporativos y fiestas privadas</p>
+      <a href="#contacto" class="cta-button">¡Reserva Ahora!</a>
+    </div>
+  </header>
+
+  <!-- Sobre Mí -->
+  <section id="sobre-mi">
+    <h2 class="section-title">Sobre Mí</h2>
+    <div class="about-container">
+      <div class="about-text">
+        <p>Soy <strong>Alejandro Pinzón</strong>, bartender profesional con más de 10 años de experiencia creando experiencias memorables a través de la coctelería artesanal. Mi pasión por los sabores auténticos y la presentación impecable me ha llevado a trabajar en los eventos más exclusivos.</p>
+        <p>Mi filosofía se basa en tres pilares:</p>
+        <ul>
+          <li>Ingredientes premium y frescos</li>
+          <li>Técnicas tradicionales con toques innovadores</li>
+          <li>Atención personalizada a cada cliente</li>
+        </ul>
+      </div>
+      <div class="about-img">
+        <img src="personal.jpg"Pinzón preparando cocteles">
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios">
+    <h2 class="section-title">Servicios</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-glass-martini-alt"></i>
+        </div>
+        <h3>Barra Libre Premium</h3>
+        <p>Coctelería clásica y de autor con licores importados y ingredientes frescos. Ideal para bodas y eventos formales.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-cocktail"></i>
+        </div>
+        <h3>Estación de Cocteles</h3>
+        <p>Barra interactiva donde los invitados pueden personalizar sus bebidas bajo tu guía experta.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-wine-bottle"></i>
+        </div>
+        <h3>Catas y Pairings</h3>
+        <p>Experiencias educativas con maridaje de cocteles y comida para eventos corporativos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="testimonials">
+    <h2 class="section-title">Clientes Satisfechos</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente 1">
+        <p>"Pinzón hizo que nuestra boda fuera mágica. Sus mojitos eran la comidilla de la fiesta."</p>
+        <div class="name">- María González</div>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente 2">
+        <p>"El mejor servicio de coctelería que hemos tenido en nuestros eventos corporativos."</p>
+        <div class="name">- Javier Martínez</div>
+      </div>
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente 3">
+        <p>"¡Increíble atención y creatividad! Todos preguntaban por el bartender."</p>
+        <div class="name">- Sofía Ramírez</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria">
+    <h2 class="section-title">Galería</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Coctel 1">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1551751299-1b51cab2694c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" alt="Coctel 2">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Evento 1">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Evento 2">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <h2 class="section-title">Contacto</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Reserva tu evento</h3>
+        <p>Completa el formulario y me pondré en contacto contigo en menos de 24 horas.</p>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <h4>celular</h4>
+            <p>+51 931992909</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p>jesuspp924@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <h4>Zona de Servicio</h4>
+            <p>Huancayo - Junin</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/tu-email" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="telefono" placeholder="Teléfono">
+        <select name="evento" required>
+          <option value="" disabled selected>Tipo de Evento</option>
+          <option value="boda">Boda</option>
+          <option value="corporativo">Evento Corporativo</option>
+          <option value="cumpleanos">Cumpleaños</option>
+          <option value="otro">Otro</option>
+        </select>
+        <input type="date" name="fecha" required>
+        <textarea name="mensaje" placeholder="Detalles del evento (número de invitados, preferencias, etc.)" required></textarea>
+        <button type="submit">Enviar Solicitud</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-about">
+        <div class="footer-logo">El Bar de <span>Pinzón</span></div>
+        <p>Coctelería profesional para convertir tus eventos en experiencias inolvidables.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Enlaces Rápidos</h3>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre Mí</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Servicios</h3>
+        <ul>
+          <li><a href="#">Bodas</a></li>
+          <li><a href="#">Eventos Corporativos</a></li>
+          <li><a href="#">Fiestas Privadas</a></li>
+          <li><a href="#">Catas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 El Bar de Pinzón. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/931992909" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- JavaScript -->
+  <script>
+    // Menú móvil
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Formulario
+    const form = document.querySelector('.contact-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Aquí puedes añadir código para enviar el formulario
+      alert('¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
