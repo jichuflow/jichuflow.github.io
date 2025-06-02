@@ -83,6 +83,10 @@
       text-align: center;
       padding: 0 2rem;
     }
+    {
+  min-height: 100vh;
+  position: relative;
+}
     .hero-content h1 {
       font-family: 'Playfair Display', serif;
       font-size: 4rem;
@@ -545,7 +549,7 @@
           </div>
         </div>
       </div>
-      <form class="contact-form" action="https://formspree.io/f/tu-email" method="POST">
+      <form class="contact-form" action="https://formspree.io/f/jesuspp924@gmail.com" method="POST" method="POST">
         <input type="text" name="nombre" placeholder="Nombre completo" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="tel" name="telefono" placeholder="Teléfono">
@@ -609,7 +613,7 @@
     // Menú móvil
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    
+          
     menuToggle.addEventListener('click', () => {
       navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
     });
