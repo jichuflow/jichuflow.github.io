@@ -13,8 +13,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
   <!-- Font Awesome (Iconos) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Usa la versión más reciente y rápida de Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-+Y1n6wQw2vQw8k9Qk8lXw1n5wQw8k9Qk8lXw1n5wQw8k9Qk8lXw1n5wQw8k9Qk8lXw1n5wQw8k9Qk8lXw1n5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />>
   <style>
+        .cta-button {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255,255,255,0.1);
+      transform: rotate(30deg);
+      transition: all 0.3s;
+    }
+
+    .cta-button:hover::after {
+      left: 100%;
+    }
     :root {
       --primary-color: #8B0000; /* Rojo vino */
       --secondary-color: #D4AF37; /* Dorado */
@@ -83,10 +104,6 @@
       text-align: center;
       padding: 0 2rem;
     }
-    {
-  min-height: 100vh;
-  position: relative;
-}
     .hero-content h1 {
       font-family: 'Playfair Display', serif;
       font-size: 4rem;
@@ -135,15 +152,17 @@
       gap: 3rem;
       align-items: center;
     }
-    .about-img {
-      border-radius: 10px;
+        .about-img {
+      position: relative;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
+
     .about-img img {
-      width: 100%;
-      height: auto;
-      transition: transform 0.5s;
+      transition: transform 0.5s ease;
+    }
+
+    .about-img:hover img {
+      transform: scale(1.1);
     }
     .about-img img:hover {
       transform: scale(1.05);
@@ -379,26 +398,30 @@
       }
     }
     /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      .menu-toggle {
-        display: block;
-        color: white;
-        font-size: 1.5rem;
-      }
-      .about-container,
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-      .hero-content p {
-        font-size: 1.2rem;
-      }
+     @media (max-width: 768px) {
+    .nav-links {
+      display: none;
     }
+    .menu-toggle {
+      display: block;
+      color: white;
+      font-size: 1.5rem;
+    }
+    .about-container,
+    .contact-container {
+      grid-template-columns: 1fr;
+    }
+    .hero-content h1 {
+      font-size: 2.2rem;
+      line-height: 1.2;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+    }
+  }
   </style>
 </head>
 <body>
@@ -418,13 +441,13 @@
   </nav>
 
   <!-- Hero Section -->
-  <header id="inicio">
-    <div class="hero-content">
-      <h1>Coctelería clasica y de Autor para Momentos Únicos</h1>
-      <p>Servicio premium de bar para bodas, eventos corporativos y fiestas privadas</p>
-      <a href="#contacto" class="cta-button">¡Reserva Ahora!</a>
-    </div>
-  </header>
+ <header id="inicio">
+  <div class="hero-content">
+    <h1>Barra Premium + DJ + Animación</h1>
+    <p>Servicio integral para bodas y eventos en Huancayo. ¡Diversión garantizada!</p>
+    <a href="#contacto" class="cta-button">¡Reserva Ahora!</a>
+  </div>
+</header>
 
   <!-- Sobre Mí -->
   <section id="sobre-mi">
@@ -446,29 +469,52 @@
   </section>
 
   <!-- Servicios -->
-  <section id="servicios">
+
+    <section id="servicios">
     <h2 class="section-title">Servicios</h2>
     <div class="services-grid">
+      <!-- Bartender -->
       <div class="service-card">
         <div class="service-icon">
           <i class="fas fa-glass-martini-alt"></i>
         </div>
+        <img src="barman.jpg" alt="Bartender preparando cocteles" style="width:100%;border-radius:10px;margin-bottom:1rem;" loading="lazy">
         <h3>Barra Libre Premium</h3>
-        <p>Coctelería clásica y de autor con licores importados y ingredientes frescos. Ideal para bodas y eventos formales.</p>
+        <p>Coctelería clásica y de autor con licores importados para bodas y eventos formales.</p>
       </div>
+      <!-- DJ -->
       <div class="service-card">
         <div class="service-icon">
-          <i class="fas fa-cocktail"></i>
+          <i class="fas fa-music"></i>
         </div>
-        <h3>Estación de Cocteles</h3>
-        <p>Barra interactiva donde los invitados pueden personalizar sus bebidas bajo tu guía experta.</p>
+        <img src="juan.jpg" alt="DJ profesional animando la fiesta" style="width:100%;border-radius:10px;margin-bottom:1rem;" loading="lazy">
+        <h3>DJ Profesional</h3>
+        <p>Música personalizada (salsa, electrónica, reguetón, pop), equipos de última generación y ambientación perfecta.</p>
+        <blockquote style="font-style:italic; color:#888; margin-top:1rem;">
+          “El DJ mantuvo la pista llena toda la noche, ¡la mejor fiesta que hemos tenido!”<br>
+          <span style="color:#b08d23;">- Cliente feliz</span>
+        </blockquote>
       </div>
+      <!-- Animador -->
       <div class="service-card">
         <div class="service-icon">
-          <i class="fas fa-wine-bottle"></i>
+          <i class="fas fa-microphone-alt"></i>
         </div>
-        <h3>Catas y Pairings</h3>
-        <p>Experiencias educativas con maridaje de cocteles y comida para eventos corporativos.</p>
+        <img src="jaime.jpg" alt="Animador liderando dinámicas" style="width:100%;border-radius:10px;margin-bottom:1rem;" loading="lazy">
+        <h3>Animación de Eventos</h3>
+        <p>Dinámicas, concursos y liderazgo de pista para mantener la energía de tus invitados.</p>
+        <blockquote style="font-style:italic; color:#888; margin-top:1rem;">
+          “El animador hizo que todos participaran y se divirtieran, ¡inolvidable!”<br>
+          <span style="color:#b08d23;">- Invitado satisfecho</span>
+        </blockquote>
+      </div>
+      <!-- Paquete Completo -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <h3>Paquete Completo</h3>
+        <p>¡Bartender + DJ + Animador! Descuento por contratar el combo completo.</p>
       </div>
     </div>
   </section>
@@ -549,17 +595,17 @@
           </div>
         </div>
       </div>
-      <form class="contact-form" action="https://formspree.io/f/jesuspp924@gmail.com" method="POST" method="POST">
-        <input type="text" name="nombre" placeholder="Nombre completo" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="tel" name="telefono" placeholder="Teléfono">
-        <select name="evento" required>
-          <option value="" disabled selected>Tipo de Evento</option>
-          <option value="boda">Boda</option>
-          <option value="corporativo">Evento Corporativo</option>
-          <option value="cumpleanos">Cumpleaños</option>
-          <option value="otro">Otro</option>
-        </select>
+            <form class="contact-form" action="https://formspree.io/f/mnnvqzdl" method="POST">
+        <input type="text" name="nombre" placeholder="Alejandro PINZON" required>
+        <input type="email" name="email" placeholder="jesuspp924@gmail.com" required>
+        <input type="tel" name="telefono" placeholder="931992909">
+            <select name="servicio" required>
+        <option value="" disabled selected>Servicio Requerido</option>
+        <option value="bartender">Solo Bartender</option>
+        <option value="dj">Solo DJ</option>
+        <option value="animacion">Animación</option>
+        <option value="combo">Paquete Completo</option>
+      </select>
         <input type="date" name="fecha" required>
         <textarea name="mensaje" placeholder="Detalles del evento (número de invitados, preferencias, etc.)" required></textarea>
         <button type="submit">Enviar Solicitud</button>
@@ -574,9 +620,9 @@
         <div class="footer-logo">El Bar de <span>Pinzón</span></div>
         <p>Coctelería profesional para convertir tus eventos en experiencias inolvidables.</p>
         <div class="social-links">
-          <a href="https://instagram.com/tuusuario" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://facebook.com/tuusuario" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://tiktok.com/@tuusuario" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
         </div>
       </div>
       <div class="footer-links">
@@ -599,7 +645,7 @@
       </div>
     </div>
     <div class="copyright">
-      <p>&copy; 2025 El Bar de Pinzón. Todos los derechos reservados.</p>
+      <p>&copy; <span id="year"></span> El Bar de Pinzón. Todos los derechos reservados.</p>
     </div>
   </footer>
 
@@ -610,23 +656,24 @@
 
   <!-- JavaScript -->
   <script>
-    // Menú móvil
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-          
-    menuToggle.addEventListener('click', () => {
-      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    });
+  // Menú móvil
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  menuToggle.addEventListener('click', () => {
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+  });
 
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
       });
     });
+  });
+
+  // Actualizar año en el footer
+  document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
