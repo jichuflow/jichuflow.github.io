@@ -168,11 +168,6 @@
       transform: scale(1.05);
     }
     /* Servicios */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
     .service-card {
       background: white;
       padding: 2rem;
@@ -193,6 +188,14 @@
       font-family: 'Playfair Display', serif;
       margin-bottom: 1rem;
     }
+    .service-card img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
     /* Testimonios */
     .testimonials {
       background-color: var(--dark-color);
@@ -237,7 +240,8 @@
     }
     .gallery-item img {
       width: 100%;
-      height: 250px;
+      height: auto;
+      max-height: 250px;
       object-fit: cover;
       transition: transform 0.5s;
     }
@@ -421,6 +425,17 @@
     .section-title {
       font-size: 1.8rem;
     }
+    .service-card img,
+  .gallery-item img {
+    max-height: 120px;
+    object-fit: cover;
+  }
+  .service-card {
+    padding: 1rem;
+  }
+  .gallery-item {
+    margin-bottom: 0.5rem;
+  }
   }
   </style>
 </head>
@@ -620,9 +635,11 @@
         <div class="footer-logo">El Bar de <span>Pinzón</span></div>
         <p>Coctelería profesional para convertir tus eventos en experiencias inolvidables.</p>
         <div class="social-links">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/jesusbajo_pp/profilecard/?igsh=MWE3c2E3b3FwcWlyMw==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61576554432676" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@alejandropinzon0?_t=ZM-8wsSZVxsLFm&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+
+        
         </div>
       </div>
       <div class="footer-links">
