@@ -4,12 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Bar móvil premium para eventos. Coctelería artesanal en bodas, fiestas y eventos corporativos con servicio personalizado.">
+
+  <!-- SEO: Open Graph -->
+  <meta property="og:title" content="El BAR DE PINZON | Coctelería clásica y de Autor para Eventos Exclusivos">
+  <meta property="og:description" content="Bar móvil premium, DJ y animación para bodas y eventos en Huancayo. Servicio personalizado y diversión garantizada.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jichuflow.github.io/">
+  <meta property="og:image" content="https://jichuflow.github.io/og-image.jpg">
+
   <title>El BAR DE PINZON | Coctelería clásica y de Autor para Eventos Exclusivos</title>
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
-  
-  <!-- Fuentes de Google -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
@@ -17,8 +27,208 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+  <!-- CSS -->
   <style>
-    /* Estilos para encabezados de artículos */
+    :root {
+      --primary-color: #8B0000;
+      --secondary-color: #D4AF37;
+      --dark-color: #1A1A1A;
+      --light-color: #F8F8F8;
+    }
+    body {
+      font-family: 'Raleway', Arial, sans-serif;
+      background: var(--light-color);
+      color: var(--dark-color);
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--dark-color);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .logo span {
+      color: var(--secondary-color);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: var(--light-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+      outline: none;
+    }
+    .nav-links a:focus, .nav-links a:hover {
+      color: var(--secondary-color);
+      text-decoration: underline;
+    }
+    .menu-toggle {
+      display: none;
+      color: var(--light-color);
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    header#inicio {
+      background: url('hero.jpg') center/cover no-repeat, linear-gradient(rgba(139,0,0,0.5),rgba(0,0,0,0.4));
+      color: #fff;
+      text-align: center;
+      padding: 4rem 2rem 6rem;
+      position: relative;
+    }
+    .hero-content h1 {
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: var(--secondary-color);
+      color: #fff;
+      padding: 0.8rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .cta-button:hover, .cta-button:focus {
+      background: var(--primary-color);
+      color: #fff;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-color);
+      text-align: center;
+      margin: 2rem 0 1rem;
+      font-size: 2rem;
+    }
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .about-text {
+      flex: 2;
+      min-width: 250px;
+    }
+    .about-img {
+      flex: 1;
+      min-width: 220px;
+      text-align: center;
+    }
+    .about-img img {
+      max-width: 220px;
+      border-radius: 10px;
+      box-shadow: 0 2px 16px rgba(139, 0, 0, 0.2);
+    }
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .services-grid article {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(139,0,0,0.08);
+      padding: 1.5rem;
+      max-width: 320px;
+      flex: 1 1 270px;
+      text-align: center;
+      transition: transform 0.15s;
+    }
+    .services-grid article:hover, .services-grid article:focus-within {
+      transform: translateY(-7px) scale(1.03);
+      box-shadow: 0 6px 24px rgba(139,0,0,0.14);
+    }
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .service-subtitle {
+      font-size: 1.1rem;
+      margin: 1rem 0 0.5rem;
+      color: var(--dark-color);
+    }
+    .services-grid img {
+      width: 100%;
+      max-width: 170px;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+    }
+    .testimonials {
+      background: var(--primary-color);
+      color: #fff;
+      padding: 2.5rem 1rem;
+    }
+    .testimonial-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonial-grid article {
+      background: rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      flex: 1 1 230px;
+      max-width: 340px;
+    }
+    .testimonial-grid img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-bottom: 0.8rem;
+      object-fit: cover;
+    }
+    .testimonial-author {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+    .rating {
+      color: gold;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      letter-spacing: 1px;
+    }
     .visually-hidden {
       position: absolute;
       width: 1px;
@@ -30,56 +240,244 @@
       white-space: nowrap;
       border: 0;
     }
-    
-    .service-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: var(--primary-color);
-      margin-bottom: 1rem;
+    .gallery-grid {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
     }
-    
-    .service-subtitle {
-      font-size: 1.1rem;
-      margin: 1rem 0 0.5rem;
-      color: var(--dark-color);
+    .gallery-grid article {
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(139,0,0,0.08);
+      max-width: 300px;
+      flex: 1 1 220px;
+      transition: transform 0.12s;
     }
-    
-    .testimonial-author {
-      font-size: 1.1rem;
-      margin-top: 1rem;
+    .gallery-grid article:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 28px rgba(139,0,0,0.17);
     }
-    
+    .gallery-grid img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+    }
     .event-type {
       font-size: 1.1rem;
       margin-bottom: 0.5rem;
+      color: var(--primary-color);
     }
-    
-    /* Resto de tus estilos existentes... */
-    :root {
-      --primary-color: #8B0000;
-      --secondary-color: #D4AF37;
-      --dark-color: #1A1A1A;
-      --light-color: #F8F8F8;
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      align-items: flex-start;
+      justify-content: center;
     }
-    
-    /* ... (mantén el resto de tus estilos existentes) ... */
+    .contact-info {
+      flex: 1 1 260px;
+      min-width: 220px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin: 1.2rem 0;
+    }
+    .contact-icon {
+      color: var(--secondary-color);
+      font-size: 2rem;
+      margin-right: 0.7rem;
+    }
+    .contact-form {
+      flex: 1 1 350px;
+      min-width: 280px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(139,0,0,0.10);
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-form label {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: var(--primary-color);
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      font-family: inherit;
+      margin-bottom: 0.8rem;
+      background: #f3f3f3;
+    }
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+    .contact-form button {
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 0.7rem 1.3rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      align-self: flex-end;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover, .contact-form button:focus {
+      background: var(--secondary-color);
+      color: var(--dark-color);
+    }
+    .form-success, .form-error {
+      padding: 0.7rem 1rem;
+      border-radius: 7px;
+      font-size: 1rem;
+    }
+    .form-success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #badbcc;
+      margin-bottom: 10px;
+    }
+    .form-error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      margin-bottom: 10px;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 27px;
+      right: 27px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      z-index: 1001;
+      text-decoration: none;
+      transition: background 0.18s;
+    }
+    .whatsapp-float:hover, .whatsapp-float:focus {
+      background: #128c7e;
+      color: #fff;
+    }
+    footer {
+      background: var(--dark-color);
+      color: #eee;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      font-size: 1rem;
+    }
+    .footer-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .footer-social {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+    .footer-social a {
+      color: var(--secondary-color);
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover, .footer-social a:focus {
+      color: #fff;
+    }
+    @media (max-width: 900px) {
+      .about-container, .services-grid, .testimonial-grid, .gallery-grid, .contact-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .services-grid, .testimonial-grid, .gallery-grid {
+        gap: 1rem;
+      }
+    }
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: row;
+        padding: 1rem 1rem;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--dark-color);
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 180px;
+        border-radius: 0 0 0 13px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.12);
+        z-index: 1002;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+    @media (max-width: 500px) {
+      header#inicio {
+        padding: 2rem 0.5rem 3rem;
+      }
+      .section-title {
+        font-size: 1.3rem;
+      }
+      .services-grid article, .gallery-grid article {
+        max-width: 100%;
+        padding: 1rem 0.3rem;
+      }
+      .about-img img {
+        max-width: 100%;
+      }
+      .contact-form {
+        padding: 1rem 0.2rem;
+      }
+      .whatsapp-float {
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav>
     <div class="logo">El Bar de <span>Pinzón</span></div>
-    <div class="nav-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#sobre-mi">Sobre Mí</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#galeria">Galería</a>
-      <a href="#contacto">Contacto</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#inicio" tabindex="1">Inicio</a>
+      <a href="#sobre-mi" tabindex="2">Sobre Mí</a>
+      <a href="#servicios" tabindex="3">Servicios</a>
+      <a href="#galeria" tabindex="4">Galería</a>
+      <a href="#contacto" tabindex="5">Contacto</a>
     </div>
-    <div class="menu-toggle">
+    <div class="menu-toggle" aria-label="Abrir menú de navegación" id="menuToggle" tabindex="0">
       <i class="fas fa-bars"></i>
     </div>
   </nav>
@@ -107,21 +505,20 @@
         </ul>
       </div>
       <div class="about-img">
-        <img src="personal.jpg" alt="Alejandro Pinzón preparando cócteles">
+        <img src="personal.jpg" alt="Alejandro Pinzón preparando cócteles, sonriendo y sirviendo bebidas artesanales">
       </div>
     </div>
   </section>
 
-  <!-- Servicios - Corregido con encabezados en artículos -->
+  <!-- Servicios -->
   <section id="servicios">
     <h2 class="section-title">Nuestros Servicios</h2>
     <div class="services-grid">
-      <!-- Bartender -->
       <article aria-labelledby="servicio-bartender">
         <h3 id="servicio-bartender" class="service-title">
           <i class="fas fa-glass-martini-alt"></i> Barra Libre Premium
         </h3>
-        <img src="barman.jpg" alt="Bartender preparando cócteles">
+        <img src="barman.jpg" alt="Bartender profesional sirviendo cócteles en evento elegante">
         <div class="service-details">
           <h4 class="service-subtitle">Incluye:</h4>
           <p>Coctelería clásica y de autor con licores importados para bodas y eventos formales.</p>
@@ -129,13 +526,11 @@
           <p>S/1,500</p>
         </div>
       </article>
-      
-      <!-- DJ -->
       <article aria-labelledby="servicio-dj">
         <h3 id="servicio-dj" class="service-title">
           <i class="fas fa-music"></i> DJ Profesional
         </h3>
-        <img src="juan.jpg" alt="DJ profesional animando la fiesta">
+        <img src="juan.jpg" alt="DJ profesional animando fiesta con luces y música moderna">
         <div class="service-details">
           <h4 class="service-subtitle">Incluye:</h4>
           <p>Música personalizada (salsa, electrónica, reguetón, pop), equipos de última generación.</p>
@@ -143,13 +538,11 @@
           <p>S/800</p>
         </div>
       </article>
-      
-      <!-- Animador -->
       <article aria-labelledby="servicio-animacion">
         <h3 id="servicio-animacion" class="service-title">
           <i class="fas fa-microphone-alt"></i> Animación de Eventos
         </h3>
-        <img src="jaime.jpg" alt="Animador liderando dinámicas">
+        <img src="jaime.jpg" alt="Animador liderando dinámicas y concursos en evento social">
         <div class="service-details">
           <h4 class="service-subtitle">Incluye:</h4>
           <p>Dinámicas, concursos y liderazgo de pista para mantener la energía de tus invitados.</p>
@@ -160,75 +553,70 @@
     </div>
   </section>
 
-  <!-- Testimonios - Corregido con encabezados en artículos -->
+  <!-- Testimonios -->
   <section class="testimonials">
     <h2 class="section-title">Clientes Satisfechos</h2>
     <div class="testimonial-grid">
       <article aria-labelledby="testimonio1">
         <h3 id="testimonio1" class="visually-hidden">Testimonio de María González</h3>
-        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Foto de María González">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Foto real de cliente María González, sonriente y feliz">
         <blockquote>
           <p>"Pinzón hizo que nuestra boda fuera mágica. Sus mojitos eran la comidilla de la fiesta."</p>
           <footer>
             <h4 class="testimonial-author">María González</h4>
-            <div class="rating">★★★★★</div>
+            <div class="rating" aria-label="5 estrellas">★★★★★</div>
           </footer>
         </blockquote>
       </article>
-      
       <article aria-labelledby="testimonio2">
         <h3 id="testimonio2" class="visually-hidden">Testimonio de Javier Martínez</h3>
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto de Javier Martínez">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto real de cliente Javier Martínez, sonriendo">
         <blockquote>
           <p>"El mejor servicio de coctelería que hemos tenido en nuestros eventos corporativos."</p>
           <footer>
             <h4 class="testimonial-author">Javier Martínez</h4>
-            <div class="rating">★★★★★</div>
+            <div class="rating" aria-label="5 estrellas">★★★★★</div>
           </footer>
         </blockquote>
       </article>
-      
       <article aria-labelledby="testimonio3">
         <h3 id="testimonio3" class="visually-hidden">Testimonio de Sofía Ramírez</h3>
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Foto de Sofía Ramírez">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Foto real de cliente Sofía Ramírez, con copa de cóctel">
         <blockquote>
           <p>"¡Increíble atención y creatividad! Todos preguntaban por el bartender."</p>
           <footer>
             <h4 class="testimonial-author">Sofía Ramírez</h4>
-            <div class="rating">★★★★☆</div>
+            <div class="rating" aria-label="4 estrellas">★★★★☆</div>
           </footer>
         </blockquote>
       </article>
     </div>
   </section>
 
-  <!-- Galería - Corregido con encabezados en artículos -->
+  <!-- Galería -->
   <section id="galeria">
     <h2 class="section-title">Galería de Eventos</h2>
     <div class="gallery-grid">
       <article aria-labelledby="evento1">
         <h3 id="evento1" class="visually-hidden">Evento de coctelería</h3>
         <figure>
-          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b" alt="Coctel clásico servido en evento">
+          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b" alt="Coctel clásico servido en evento elegante">
           <figcaption>
             <h4 class="event-type">Barra Premium</h4>
             <p>Presentación de cócteles clásicos</p>
           </figcaption>
         </figure>
       </article>
-      
       <article aria-labelledby="evento2">
         <h3 id="evento2" class="visually-hidden">Evento con DJ</h3>
         <figure>
-          <img src="https://images.unsplash.com/photo-1551751299-1b51cab2694c" alt="DJ animando fiesta">
+          <img src="https://images.unsplash.com/photo-1551751299-1b51cab2694c" alt="DJ profesional animando fiesta con luces">
           <figcaption>
             <h4 class="event-type">Servicio de DJ</h4>
             <p>Música para todos los gustos</p>
           </figcaption>
         </figure>
       </article>
-      
-      <!-- Más artículos de galería... -->
     </div>
   </section>
 
@@ -241,17 +629,46 @@
         <p>Completa el formulario y me pondré en contacto contigo en menos de 24 horas.</p>
         <div class="contact-item">
           <div class="contact-icon">
-            <i class="fas fa-phone"></i>
+            <i class="fas fa-phone" aria-hidden="true"></i>
           </div>
           <div>
             <h4>Celular</h4>
-            <p>+51 931992909</p>
+            <p><a href="tel:+51931992909" style="color:inherit;text-decoration:underline;">+51 931992909</a></p>
           </div>
         </div>
-        <!-- Más información de contacto... -->
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:barpinzon@gmail.com" style="color:inherit;text-decoration:underline;">barpinzon@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          </div>
+          <div>
+            <h4>Ubicación</h4>
+            <p>Huancayo, Perú</p>
+          </div>
+        </div>
       </div>
-      <form class="contact-form" action="https://formspree.io/f/mnnvqzdl" method="POST">
-        <!-- Campos del formulario... -->
+      <form class="contact-form" action="https://formspree.io/f/mnnvqzdl" method="POST" id="contactForm" autocomplete="off" novalidate>
+        <div id="form-messages"></div>
+        <label for="nombre">Nombre*</label>
+        <input type="text" name="nombre" id="nombre" required maxlength="50" placeholder="Tu nombre" autocomplete="name">
+
+        <label for="email">Correo electrónico*</label>
+        <input type="email" name="email" id="email" required maxlength="60" placeholder="tu@email.com" autocomplete="email">
+
+        <label for="mensaje">Mensaje*</label>
+        <textarea name="mensaje" id="mensaje" required maxlength="500" placeholder="Cuéntame sobre tu evento..."></textarea>
+
+        <input type="text" name="_gotcha" style="display:none">
+
+        <button type="submit">Enviar Mensaje</button>
       </form>
     </div>
   </section>
@@ -259,18 +676,66 @@
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <!-- Contenido del footer... -->
+      <div>© 2025 El Bar de Pinzón - Todos los derechos reservados</div>
+      <div class="footer-social">
+        <a href="https://wa.me/51931992909" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/barpinzon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/barpinzon" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      </div>
     </div>
   </footer>
 
   <!-- WhatsApp -->
-  <a href="https://wa.me/931992909" class="whatsapp-float">
+  <a href="https://wa.me/51931992909" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- JavaScript -->
+  <!-- JavaScript Responsive Menu & Form Validation -->
   <script>
-    // Tu código JavaScript existente...
+    // Menú hamburguesa funcional
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('open');
+    });
+    menuToggle.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        navLinks.classList.toggle('open');
+      }
+    });
+
+    // Cerrar menú al hacer clic en un enlace (en móvil)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Validación básica del formulario y feedback
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+      const formMessages = document.getElementById('form-messages');
+      formMessages.innerHTML = '';
+      let isValid = true;
+      let errorMsg = '';
+
+      if (nombre === '' || nombre.length < 2) {
+        isValid = false; errorMsg += 'Por favor ingresa tu nombre.<br>';
+      }
+      if (!/^[\w\.\-]+@[\w\-]+(\.[\w\-]+)+$/.test(email)) {
+        isValid = false; errorMsg += 'Por favor ingresa un email válido.<br>';
+      }
+      if (mensaje === '' || mensaje.length < 10) {
+        isValid = false; errorMsg += 'Por favor ingresa un mensaje más detallado.<br>';
+      }
+      if (!isValid) {
+        e.preventDefault();
+        formMessages.innerHTML = '<div class="form-error" tabindex="0">' + errorMsg + '</div>';
+        formMessages.querySelector('.form-error').focus();
+      }
+    });
   </script>
 </body>
 </html>
