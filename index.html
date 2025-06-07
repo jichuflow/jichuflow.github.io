@@ -1,696 +1,1453 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bar móvil premium para eventos. Coctelería artesanal en bodas, fiestas y eventos corporativos con servicio personalizado.">
-  <meta name="keywords" content="coctelería, bartender, eventos, bodas, mojitos, margaritas, bar móvil">
-  <title>El BAR DE PINZON| Coctelería clasica y de Autor para Eventos Exclusivos</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <!-- Fuentes de Google -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="🌟 Servicio Premium de Bartender, DJ y Animación en Huancayo | Barra Libre Personalizada + Música + Diversión Garantizada | Cotiza tu Evento Hoy">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  
+  <!-- Preconexiones Prioritarias -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome (Iconos) -->
-    <!-- Usa la versión más reciente y rápida de Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-+Y1n6wQw2vQw8k9Qk8lXw1n5wQw8k9Qk8lXw1n5wQw8k9Qk8lXw1n5wQw8k9Qk8lXw1n5wQw8k9Qk8lXw1n5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  
+  <!-- Fuentes Optimizadas -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Minimal -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Favicon Moderno -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  
+  <!-- CSS Inline Crítico -->
   <style>
-        .cta-button {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-button::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: rgba(255,255,255,0.1);
-      transform: rotate(30deg);
-      transition: all 0.3s;
-    }
-
-    .cta-button:hover::after {
-      left: 100%;
-    }
     :root {
-      --primary-color: #8B0000; /* Rojo vino */
-      --secondary-color: #D4AF37; /* Dorado */
-      --dark-color: #1A1A1A;
-      --light-color: #F8F8F8;
+      --primary: #8B0000;
+      --primary-light: #a52a2a;
+      --secondary: #D4AF37;
+      --secondary-light: #e8c874;
+      --dark: #1A1A1A;
+      --dark-light: #2d2d2d;
+      --light: #F8F8F8;
+      --gray: #e0e0e0;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+      --radius: 8px;
     }
-    * {
+    
+    /* Reset y Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
     body {
       font-family: 'Raleway', sans-serif;
       line-height: 1.6;
-      color: var(--dark-color);
-      background-color: var(--light-color);
+      color: var(--dark);
+      background-color: var(--light);
       overflow-x: hidden;
     }
-    /* Navbar */
-    nav {
-      position: fixed;
-      top: 0;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Componentes Críticos */
+    .container {
       width: 100%;
-      background-color: rgba(26, 26, 26, 0.9);
-      padding: 1.5rem 2rem;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    .logo {
-      color: var(--light-color);
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
-    .logo span {
-      color: var(--secondary-color);
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-    .nav-links a {
-      color: var(--light-color);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    .nav-links a:hover {
-      color: var(--secondary-color);
-    }
-    .menu-toggle {
-      display: none;
-      cursor: pointer;
-    }
-    /* Hero Section */
-    header {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(portada.jpg) no-repeat center center/cover;
-      height: 100vh;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 2rem;
-    }
-    .hero-content h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      animation: fadeInDown 1s ease;
-    }
-    .hero-content p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      animation: fadeInUp 1s ease;
-    }
-    .cta-button {
-      display: inline-block;
-      background-color: var(--primary-color);
-      color: white;
-      padding: 15px 30px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: all 0.3s;
-      animation: fadeIn 1.5s ease;
-    }
-    .cta-button:hover {
-      background-color: var(--secondary-color);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-    /* Secciones */
-    section {
-      padding: 6rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 1.5rem;
     }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .section {
+      padding: 5rem 0;
+    }
+    
     .section-title {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       text-align: center;
       margin-bottom: 3rem;
-      color: var(--primary-color);
+      position: relative;
     }
-    /* Sobre Mí */
-    .about-container {
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--secondary);
+      margin: 1rem auto 0;
+    }
+    
+    /* Navbar Mejorado */
+    #navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(26, 26, 26, 0.96);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+    
+    #navbar.scrolled {
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 1.5rem;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .logo span {
+      color: var(--secondary);
+    }
+    
+    /* Menú Hamburguesa Mejorado */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: var(--transition);
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .cta-nav {
+      background-color: var(--primary);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      transition: var(--transition);
+    }
+    
+    .cta-nav:hover {
+      background-color: var(--secondary);
+      color: var(--dark);
+    }
+    
+    /* Hero Section Mejorada */
+    #hero {
+      height: 100vh;
+      min-height: 600px;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('portada.webp') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      padding: 0 1.5rem;
+      animation: fadeIn 1s ease-out;
+    }
+    
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .hero-content p {
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      margin-bottom: 2.5rem;
+      opacity: 0.9;
+    }
+    
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: white;
+    }
+    
+    .btn-whatsapp:hover {
+      background-color: #128C7E;
+      transform: translateY(-2px);
+    }
+    
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 2rem;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+      40% { transform: translateY(-20px) translateX(-50%); }
+      60% { transform: translateY(-10px) translateX(-50%); }
+    }
+    
+    /* Sección de Confianza */
+    .trust-badges {
+      background-color: white;
+      padding: 1.5rem 0;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .badges-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    
+    .badge img {
+      width: 40px;
+      height: 40px;
+    }
+    
+    /* Servicios con Pestañas */
+    .tabs {
+      margin-top: 2rem;
+    }
+    
+    .tab-header {
+      display: flex;
+      border-bottom: 1px solid var(--gray);
+      margin-bottom: 2rem;
+    }
+    
+    .tab-link {
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      font-weight: 600;
+      border-bottom: 3px solid transparent;
+      transition: var(--transition);
+    }
+    
+    .tab-link.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
+    }
+    
+    .service-card {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-        .about-img {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-img img {
-      transition: transform 0.5s ease;
-    }
-
-    .about-img:hover img {
-      transform: scale(1.1);
-    }
-    .about-img img:hover {
-      transform: scale(1.05);
-    }
-    /* Servicios */
-    .service-card {
+      gap: 2rem;
       background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .service-media {
+      position: relative;
+    }
+    
+    .service-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background-color: rgba(212, 175, 55, 0.8);
+      border-radius: 50%;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .play-btn:hover {
+      background-color: var(--secondary);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    
+    .service-info {
       padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: transform 0.3s;
     }
-    .service-card:hover {
-      transform: translateY(-10px);
-    }
-    .service-icon {
-      font-size: 3rem;
-      color: var(--primary-color);
-      margin-bottom: 1.5rem;
-    }
-    .service-card h3 {
+    
+    .service-info h3 {
       font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
     }
-    .service-card img {
-  width: 100%;
-  height: auto;
-  max-height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-    /* Testimonios */
-    .testimonials {
-      background-color: var(--dark-color);
+    
+    .feature-list {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    
+    .feature-list li {
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .feature-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+      font-weight: bold;
+    }
+    
+    .price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 1.5rem 0;
+    }
+    
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--primary);
       color: white;
-      text-align: center;
     }
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+    
+    /* Galería Interactiva */
+    .gallery-filter {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
     }
-    .testimonial-card {
-      background-color: rgba(255, 255, 255, 0.1);
+    
+    .filter-btn {
+      padding: 0.5rem 1.5rem;
+      background: none;
+      border: 1px solid var(--gray);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .filter-btn.active {
+      background-color: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    
+    .masonry-grid {
+      columns: 3;
+      column-gap: 1rem;
+    }
+    
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Testimonios con Carrusel */
+    .testimonial-carousel {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-slide {
+      background-color: white;
       padding: 2rem;
-      border-radius: 10px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      display: none;
     }
-    .testimonial-card img {
+    
+    .testimonial-slide.active {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
+    }
+    
+    .testimonial-slide img {
       width: 80px;
       height: 80px;
       border-radius: 50%;
       object-fit: cover;
       margin: 0 auto 1rem;
+      border: 3px solid var(--secondary);
     }
-    .testimonial-card p {
+    
+    .testimonial-slide p {
       font-style: italic;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      position: relative;
     }
-    .testimonial-card .name {
-      font-weight: 600;
-      color: var(--secondary-color);
+    
+    .testimonial-slide p::before,
+    .testimonial-slide p::after {
+      content: '"';
+      font-size: 1.5rem;
+      color: var(--secondary);
+      opacity: 0.5;
     }
-    /* Galería */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .carousel-nav {
+      display: flex;
+      justify-content: center;
       gap: 1rem;
+      margin-top: 2rem;
     }
-    .gallery-item {
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--gray);
+      cursor: pointer;
+      transition: var(--transition);
     }
-    .gallery-item img {
+    
+    .carousel-dot.active {
+      background-color: var(--primary);
+      transform: scale(1.2);
+    }
+    
+    /* Calculadora de Presupuesto */
+    .calculator-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .form-control {
       width: 100%;
-      height: auto;
-      max-height: 250px;
-      object-fit: cover;
-      transition: transform 0.5s;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--gray);
+      border-radius: var(--radius);
+      font-family: 'Raleway', sans-serif;
     }
-    .gallery-item img:hover {
-      transform: scale(1.1);
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
     }
-    /* Contacto */
-    .contact-container {
+    
+    .calculator-result {
+      background-color: var(--light);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      margin-top: 2rem;
+      text-align: center;
+    }
+    
+    .calculator-result h3 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .total-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    /* Contacto Avanzado */
+    .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
     }
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+    
+    .contact-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
     }
-    .contact-item {
+    
+    .contact-method {
       display: flex;
       align-items: center;
       gap: 1rem;
+      margin-bottom: 1.5rem;
     }
+    
     .contact-icon {
-      font-size: 1.5rem;
-      color: var(--primary-color);
-    }
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form select {
-      width: 100%;
-      padding: 15px;
-      margin-bottom: 1.5rem;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-family: 'Raleway', sans-serif;
-    }
-    .contact-form textarea {
-      height: 150px;
-    }
-    .contact-form button {
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 50px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.3s;
-    }
-    .contact-form button:hover {
-      background-color: var(--secondary-color);
-    }
-    /* Footer */
-    footer {
-      background-color: var(--dark-color);
-      color: white;
-      text-align: center;
-      padding: 3rem 2rem;
-    }
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      text-align: left;
-    }
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .footer-logo span {
-      color: var(--secondary-color);
-    }
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .social-links a {
-      color: white;
-      font-size: 1.5rem;
-      transition: color 0.3s;
-    }
-    .social-links a:hover {
-      color: var(--secondary-color);
-    }
-    .footer-links h3 {
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 1.5rem;
-      color: var(--secondary-color);
-    }
-    .footer-links ul {
-      list-style: none;
-    }
-    .footer-links li {
-      margin-bottom: 0.5rem;
-    }
-    .footer-links a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .footer-links a:hover {
-      color: var(--secondary-color);
-    }
-    .copyright {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    /* WhatsApp Flotante */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #25D366;
-      color: white;
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(139, 0, 0, 0.1);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      z-index: 100;
-      transition: all 0.3s;
+      color: var(--primary);
+      font-size: 1.2rem;
     }
-    .whatsapp-float:hover {
+    
+    .social-proof {
+      margin-top: 3rem;
+    }
+    
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .stars {
+      color: var(--secondary);
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+    
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      background-color: #f0fff0;
+      border-radius: var(--radius);
+    }
+    
+    .form-success i {
+      font-size: 3rem;
+      color: #28a745;
+      margin-bottom: 1rem;
+    }
+    
+    /* Footer Avanzado */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 4rem 0 0;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer-col h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: var(--secondary);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--secondary);
+    }
+    
+    .footer-bottom {
+      padding: 1.5rem 0;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-bottom .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .legal-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .legal-links a {
+      color: white;
+      opacity: 0.7;
+      text-decoration: none;
+    }
+    
+    /* Chatbot y WhatsApp Flotante */
+    #chatbot-trigger {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      z-index: 999;
+      transition: var(--transition);
+    }
+    
+    #chatbot-trigger:hover {
+      background-color: var(--primary-light);
+      transform: scale(1.1);
+    }
+    
+    #whatsapp-float {
+      position: fixed;
+      bottom: 8rem;
+      right: 2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 5px 25px rgba(37, 211, 102, 0.3);
+      z-index: 999;
+      transition: var(--transition);
+      animation: pulse 2s infinite;
+    }
+    
+    #whatsapp-float:hover {
+      animation: none;
       transform: scale(1.1);
       background-color: #128C7E;
     }
+    
+    .tooltip {
+      position: absolute;
+      right: 70px;
+      background-color: var(--dark);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      white-space: nowrap;
+      opacity: 0;
+      transition: var(--transition);
+      pointer-events: none;
+    }
+    
+    #whatsapp-float:hover .tooltip {
+      opacity: 1;
+      right: 80px;
+    }
+    
     /* Animaciones */
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    
+    /* Modo Oscuro */
+    [data-theme="dark"] {
+      --dark: #F8F8F8;
+      --light: #1A1A1A;
+      --gray: #2d2d2d;
     }
-    /* Responsive */
-     @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-    }
-    .menu-toggle {
-      display: block;
-      color: white;
-      font-size: 1.5rem;
-    }
-    .about-container,
-    .contact-container {
-      grid-template-columns: 1fr;
-    }
-    .hero-content h1 {
-      font-size: 2.2rem;
-      line-height: 1.2;
-    }
-    .hero-content p {
+    
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--dark);
+      cursor: pointer;
       font-size: 1.2rem;
     }
-    .section-title {
-      font-size: 1.8rem;
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .service-card {
+        grid-template-columns: 1fr;
+      }
+      
+      .masonry-grid {
+        columns: 2;
+      }
     }
-    .service-card img,
-  .gallery-item img {
-    max-height: 120px;
-    object-fit: cover;
-  }
-  .service-card {
-    padding: 1rem;
-  }
-  .gallery-item {
-    margin-bottom: 0.5rem;
-  }
-  }
+    
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--dark);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: var(--transition);
+        z-index: 1000;
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .masonry-grid {
+        columns: 1;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .section {
+        padding: 3rem 0;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .cta-group {
+        flex-direction: column;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">El Bar de <span>Pinzón</span></div>
-    <div class="nav-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#sobre-mi">Sobre Mí</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#galeria">Galería</a>
-      <a href="#contacto">Contacto</a>
+  <!-- Navbar Mejorado -->
+  <header id="navbar">
+    <div class="navbar-container container">
+      <a href="/" class="logo">El Bar de <span>Pinzón</span></a>
+      
+      <button class="menu-toggle" aria-label="Menú">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto" class="cta-nav">Cotizar Evento</a></li>
+      </ul>
     </div>
-    <div class="menu-toggle">
-      <i class="fas fa-bars"></i>
-    </div>
-  </nav>
+  </header>
 
-  <!-- Hero Section -->
- <header id="inicio">
-  <div class="hero-content">
-    <h1>Barra Premium + DJ + Animación</h1>
-    <p>Servicio integral para bodas y eventos en Huancayo. ¡Diversión garantizada!</p>
-    <a href="#contacto" class="cta-button">¡Reserva Ahora!</a>
-  </div>
-</header>
-
-  <!-- Sobre Mí -->
-  <section id="sobre-mi">
-    <h2 class="section-title">Sobre Mí</h2>
-    <div class="about-container">
-      <div class="about-text">
-        <p>Soy <strong>Alejandro Pinzón</strong>, bartender profesional con más de 10 años de experiencia creando experiencias memorables a través de la coctelería artesanal. Mi pasión por los sabores auténticos y la presentación impecable me ha llevado a trabajar en los eventos más exclusivos.</p>
-        <p>Mi filosofía se basa en tres pilares:</p>
-        <ul>
-          <li>Ingredientes premium y frescos</li>
-          <li>Técnicas tradicionales con toques innovadores</li>
-          <li>Atención personalizada a cada cliente</li>
-        </ul>
+  <!-- Hero Section con Efecto Parallax -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Experiencias que Inspiran</h1>
+      <p class="lead">Barra Premium • DJ Profesional • Animación Personalizada</p>
+      
+      <div class="cta-group">
+        <a href="#contacto" class="btn btn-primary pulse">
+          <i class="fas fa-calendar-alt"></i> Reservar Ahora
+        </a>
+        <a href="https://wa.me/51931992909" class="btn btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
       </div>
-      <div class="about-img">
-        <img src="personal.jpg" alt="Pinzón preparando cocteles">
+      
+      <a href="#servicios" class="scroll-hint" aria-label="Desplazarse hacia abajo">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Sección de Confianza -->
+  <section class="trust-badges">
+    <div class="badges-container container">
+      <div class="badge">
+        <img src="icons/experience.svg" alt="Experiencia" loading="lazy">
+        <span>10+ Años de Experiencia</span>
+      </div>
+      <div class="badge">
+        <img src="icons/premium.svg" alt="Premium" loading="lazy">
+        <span>Ingredientes Premium</span>
+      </div>
+      <div class="badge">
+        <img src="icons/calendar.svg" alt="Disponibilidad" loading="lazy">
+        <span>Reservas 24/7</span>
       </div>
     </div>
   </section>
 
-  <!-- Servicios -->
-
-    <section id="servicios">
-    <h2 class="section-title">Servicios</h2>
-    <div class="services-grid">
-      <!-- Bartender -->
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-glass-martini-alt"></i>
+  <!-- Servicios con Pestañas Interactivas -->
+  <section id="servicios" class="section">
+    <div class="container">
+      <h2 class="section-title">Nuestros <span>Servicios</span></h2>
+      
+      <div class="tabs">
+        <div class="tab-header">
+          <div class="tab-link active" data-tab="bartender">
+            <i class="fas fa-cocktail"></i> Bartender
+          </div>
+          <div class="tab-link" data-tab="dj">
+            <i class="fas fa-music"></i> DJ
+          </div>
+          <div class="tab-link" data-tab="animacion">
+            <i class="fas fa-microphone"></i> Animación
+          </div>
         </div>
-        <img src="barman.jpg" alt="Bartender preparando cocteles" style="width:100%;border-radius:10px;margin-bottom:1rem;" loading="lazy">
-        <h3>Barra Libre Premium</h3>
-        <p>Coctelería clásica y de autor con licores importados para bodas y eventos formales.</p>
-      </div>
-      <!-- DJ -->
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-music"></i>
+        
+        <div class="tab-content active" id="bartender">
+          <div class="service-card">
+            <div class="service-media">
+              <img src="img/bartender-service.webp" alt="Servicio de bartender" loading="lazy">
+              <button class="play-btn" aria-label="Ver video">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="service-info">
+              <h3>Barra Libre Premium</h3>
+              <ul class="feature-list">
+                <li>Coctelería clásica y de autor</li>
+                <li>Licores importados y nacionales</li>
+                <li>Presentación gourmet</li>
+                <li>Equipo completo incluido</li>
+              </ul>
+              <div class="price">Desde S/1,500</div>
+              <button class="btn btn-outline" data-service="bartender">Más información</button>
+            </div>
+          </div>
         </div>
-        <img src="juan.jpg" alt="DJ profesional animando la fiesta" style="width:100%;border-radius:10px;margin-bottom:1rem;" loading="lazy">
-        <h3>DJ Profesional</h3>
-        <p>Música personalizada (salsa, electrónica, reguetón, pop), equipos de última generación y ambientación perfecta.</p>
-        <blockquote style="font-style:italic; color:#888; margin-top:1rem;">
-          “El DJ mantuvo la pista llena toda la noche, ¡la mejor fiesta que hemos tenido!”<br>
-          <span style="color:#b08d23;">- Cliente feliz</span>
-        </blockquote>
-      </div>
-      <!-- Animador -->
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-microphone-alt"></i>
+        
+        <div class="tab-content" id="dj">
+          <div class="service-card">
+            <div class="service-media">
+              <img src="img/dj-service.webp" alt="Servicio de DJ" loading="lazy">
+              <button class="play-btn" aria-label="Ver video">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="service-info">
+              <h3>DJ Profesional</h3>
+              <ul class="feature-list">
+                <li>Equipos de última generación</li>
+                <li>Música personalizada</li>
+                <li>Amplio repertorio musical</li>
+                <li>Iluminación profesional</li>
+              </ul>
+              <div class="price">Desde S/800</div>
+              <button class="btn btn-outline" data-service="dj">Más información</button>
+            </div>
+          </div>
         </div>
-        <img src="jaime.jpg" alt="Animador liderando dinámicas" style="width:100%;border-radius:10px;margin-bottom:1rem;" loading="lazy">
-        <h3>Animación de Eventos</h3>
-        <p>Dinámicas, concursos y liderazgo de pista para mantener la energía de tus invitados.</p>
-        <blockquote style="font-style:italic; color:#888; margin-top:1rem;">
-          “El animador hizo que todos participaran y se divirtieran, ¡inolvidable!”<br>
-          <span style="color:#b08d23;">- Invitado satisfecho</span>
-        </blockquote>
-      </div>
-      <!-- Paquete Completo -->
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-star"></i>
+        
+        <div class="tab-content" id="animacion">
+          <div class="service-card">
+            <div class="service-media">
+              <img src="img/animacion-service.webp" alt="Servicio de animación" loading="lazy">
+              <button class="play-btn" aria-label="Ver video">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="service-info">
+              <h3>Animación de Eventos</h3>
+              <ul class="feature-list">
+                <li>Dinámicas personalizadas</li>
+                <li>Concursos y juegos</li>
+                <li>Liderazgo de pista</li>
+                <li>Interacción con invitados</li>
+              </ul>
+              <div class="price">Desde S/600</div>
+              <button class="btn btn-outline" data-service="animacion">Más información</button>
+            </div>
+          </div>
         </div>
-        <h3>Paquete Completo</h3>
-        <p>¡Bartender + DJ + Animador! Descuento por contratar el combo completo.</p>
       </div>
     </div>
   </section>
 
-  <!-- Testimonios -->
-  <section class="testimonials">
-    <h2 class="section-title">Clientes Satisfechos</h2>
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente 1">
-        <p>"Pinzón hizo que nuestra boda fuera mágica. Sus mojitos eran la comidilla de la fiesta."</p>
-        <div class="name">- María González</div>
+  <!-- Galería Interactiva -->
+  <section id="galeria" class="section">
+    <div class="container">
+      <h2 class="section-title">Nuestros <span>Eventos</span></h2>
+      
+      <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="bodas">Bodas</button>
+        <button class="filter-btn" data-filter="corporativos">Corporativos</button>
+        <button class="filter-btn" data-filter="fiestas">Fiestas</button>
       </div>
-      <div class="testimonial-card">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente 2">
-        <p>"El mejor servicio de coctelería que hemos tenido en nuestros eventos corporativos."</p>
-        <div class="name">- Javier Martínez</div>
-      </div>
-      <div class="testimonial-card">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente 3">
-        <p>"¡Increíble atención y creatividad! Todos preguntaban por el bartender."</p>
-        <div class="name">- Sofía Ramírez</div>
+      
+      <div class="masonry-grid">
+        <div class="gallery-item" data-category="bodas">
+          <img src="img/gallery/wedding-1.webp" alt="Boda con barra premium" loading="lazy">
+        </div>
+        <div class="gallery-item" data-category="corporativos">
+          <img src="img/gallery/corporate-1.webp" alt="Evento corporativo" loading="lazy">
+        </div>
+        <div class="gallery-item" data-category="bodas">
+          <img src="img/gallery/wedding-2.webp" alt="Boda con servicio de DJ" loading="lazy">
+        </div>
+        <div class="gallery-item" data-category="fiestas">
+          <img src="img/gallery/party-1.webp" alt="Fiesta animada" loading="lazy">
+        </div>
+        <div class="gallery-item" data-category="corporativos">
+          <img src="img/gallery/corporate-2.webp" alt="Coctel corporativo" loading="lazy">
+        </div>
+        <div class="gallery-item" data-category="fiestas">
+          <img src="img/gallery/party-2.webp" alt="Fiesta con animación" loading="lazy">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Galería -->
-  <section id="galeria">
-    <h2 class="section-title">Galería</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Coctel 1">
+  <!-- Testimonios con Carrusel -->
+  <section id="testimonios" class="section bg-dark">
+    <div class="container">
+      <h2 class="section-title light">Lo que dicen <span>nuestros clientes</span></h2>
+      
+      <div class="testimonial-carousel">
+        <div class="testimonial-slide active">
+          <img src="img/testimonials/client-1.webp" alt="Cliente satisfecho" loading="lazy">
+          <p>"Pinzón hizo que nuestra boda fuera mágica. Sus mojitos eran la comidilla de la fiesta y el DJ mantuvo la pista llena toda la noche."</p>
+          <div class="testimonial-author">María González</div>
+          <div class="rating">★★★★★</div>
+        </div>
+        
+        <div class="testimonial-slide">
+          <img src="img/testimonials/client-2.webp" alt="Cliente satisfecho" loading="lazy">
+          <p>"El mejor servicio de coctelería que hemos tenido en nuestros eventos corporativos. Profesionales de principio a fin."</p>
+          <div class="testimonial-author">Javier Martínez</div>
+          <div class="rating">★★★★★</div>
+        </div>
+        
+        <div class="testimonial-slide">
+          <img src="img/testimonials/client-3.webp" alt="Cliente satisfecho" loading="lazy">
+          <p>"¡Increíble atención y creatividad! Todos preguntaban por el bartender. El animador hizo que hasta los más tímidos bailaran."</p>
+          <div class="testimonial-author">Sofía Ramírez</div>
+          <div class="rating">★★★★☆</div>
+        </div>
       </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1551751299-1b51cab2694c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" alt="Coctel 2">
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Evento 1">
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Evento 2">
+      
+      <div class="carousel-nav">
+        <div class="carousel-dot active" data-slide="0"></div>
+        <div class="carousel-dot" data-slide="1"></div>
+        <div class="carousel-dot" data-slide="2"></div>
       </div>
     </div>
   </section>
 
-  <!-- Contacto -->
-  <section id="contacto">
-    <h2 class="section-title">Contacto</h2>
-    <div class="contact-container">
-      <div class="contact-info">
-        <h3>Reserva tu evento</h3>
-        <p>Completa el formulario y me pondré en contacto contigo en menos de 24 horas.</p>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-phone"></i>
-          </div>
-          <div>
-            <h4>celular</h4>
-            <p>+51 931992909</p>
+  <!-- Calculadora de Presupuesto -->
+  <section class="calculator-section section">
+    <div class="container">
+      <h2 class="section-title">Calcula tu <span>presupuesto</span></h2>
+      
+      <form id="calculator-form" class="calculator-form">
+        <div class="form-group">
+          <label for="event-type">Tipo de Evento</label>
+          <select id="event-type" class="form-control">
+            <option value="boda">Boda</option>
+            <option value="corporativo">Evento Corporativo</option>
+            <option value="fiesta">Fiesta Privada</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="guests">Número de Invitados</label>
+          <input type="number" id="guests" class="form-control" min="20" max="500" value="50">
+        </div>
+        
+        <div class="form-group">
+          <label for="services">Servicios Requeridos</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="services" value="bartender" checked> Bartender</label>
+            <label><input type="checkbox" name="services" value="dj"> DJ</label>
+            <label><input type="checkbox" name="services" value="animacion"> Animación</label>
           </div>
         </div>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div>
-            <h4>Email</h4>
-            <p>jesuspp924@gmail.com</p>
-          </div>
+        
+        <div class="form-group">
+          <label for="hours">Horas de Servicio</label>
+          <input type="range" id="hours" class="form-control" min="2" max="8" value="4">
+          <span id="hours-value">4 horas</span>
         </div>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div>
-            <h4>Zona de Servicio</h4>
-            <p>Huancayo - Junin</p>
-          </div>
+        
+        <div class="calculator-result">
+          <h3>Total estimado:</h3>
+          <div class="total-price">S/ <span id="total-price">1,800</span></div>
+          <small>Precio final puede variar según requerimientos</small>
         </div>
-      </div>
-            <form class="contact-form" action="https://formspree.io/f/mnnvqzdl" method="POST">
-        <input type="text" name="nombre" placeholder="Alejandro PINZON" required>
-        <input type="email" name="email" placeholder="jesuspp924@gmail.com" required>
-        <input type="tel" name="telefono" placeholder="931992909">
-            <select name="servicio" required>
-        <option value="" disabled selected>Servicio Requerido</option>
-        <option value="bartender">Solo Bartender</option>
-        <option value="dj">Solo DJ</option>
-        <option value="animacion">Animación</option>
-        <option value="combo">Paquete Completo</option>
-      </select>
-        <input type="date" name="fecha" required>
-        <textarea name="mensaje" placeholder="Detalles del evento (número de invitados, preferencias, etc.)" required></textarea>
-        <button type="submit">Enviar Solicitud</button>
+        
+        <button type="button" id="calculate-btn" class="btn btn-primary">Calcular</button>
       </form>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-about">
-        <div class="footer-logo">El Bar de <span>Pinzón</span></div>
-        <p>Coctelería profesional para convertir tus eventos en experiencias inolvidables.</p>
-        <div class="social-links">
-                    <a href="https://www.instagram.com/jesusbajo_pp/profilecard/?igsh=MWE3c2E3b3FwcWlyMw==" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/profile.php?id=61576554432676" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.tiktok.com/@alejandropinzon0?_t=ZM-8wsSZVxsLFm&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
-
+  <!-- Contacto Avanzado -->
+  <section id="contacto" class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Contáctanos</h2>
+          <p>¿Listo para hacer de tu evento algo inolvidable? Completa el formulario o contáctanos directamente.</p>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <h3>Teléfono / WhatsApp</h3>
+              <p><a href="tel:+51931992909">+51 931 992 909</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h3>Email</h3>
+              <p><a href="mailto:jesuspp924@gmail.com">jesuspp924@gmail.com</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h3>Ubicación</h3>
+              <p>Huancayo, Junín - Servicio en toda la región</p>
+            </div>
+          </div>
+          
+          <div class="social-proof">
+            <div class="rating">
+              <div class="stars">★★★★★</div>
+              <span>4.9/5 en Google Reviews</span>
+            </div>
+          </div>
+        </div>
         
+        <div class="contact-form">
+          <form id="event-form">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Tu nombre completo" required>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            </div>
+            
+            <div class="form-group">
+              <input type="tel" name="phone" placeholder="Tu número de teléfono" required>
+            </div>
+            
+            <div class="form-group">
+              <select name="event-type" required>
+                <option value="" disabled selected>Tipo de Evento</option>
+                <option value="boda">Boda</option>
+                <option value="corporativo">Evento Corporativo</option>
+                <option value="fiesta">Fiesta Privada</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <input type="date" name="event-date" required>
+            </div>
+            
+            <div class="form-group">
+              <textarea name="message" placeholder="Cuéntanos sobre tu evento..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">
+              <span class="button-text">Enviar Mensaje</span>
+              <span class="loading-spinner" style="display:none;">
+                <i class="fas fa-spinner fa-spin"></i>
+              </span>
+            </button>
+            
+            <div class="form-success" id="form-success" style="display:none;">
+              <i class="fas fa-check-circle"></i>
+              <h3>¡Mensaje Enviado!</h3>
+              <p>Nos pondremos en contacto contigo en menos de 24 horas.</p>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="footer-links">
-        <h3>Enlaces Rápidos</h3>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#sobre-mi">Sobre Mí</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h3>Servicios</h3>
-        <ul>
-          <li><a href="#">Bodas</a></li>
-          <li><a href="#">Eventos Corporativos</a></li>
-          <li><a href="#">Fiestas Privadas</a></li>
-          <li><a href="#">Catas</a></li>
-        </ul>
+    </div>
+  </section>
+
+  <!-- Footer Avanzado -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>El Bar de Pinzón</h3>
+          <p>Servicio premium de bartending, DJ y animación para eventos en Huancayo y toda la región.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/jesusbajo_pp/profilecard/?igsh=MWE3c2E3b3FwcWlyMw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61576554432676" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@alejandropinzon0?_t=ZM-8wsSZVxsLFm&_r=1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Servicios</h3>
+          <ul class="footer-links">
+            <li><a href="#servicios">Barra Libre Premium</a></li>
+            <li><a href="#servicios">DJ Profesional</a></li>
+            <li><a href="#servicios">Animación de Eventos</a></li>
+            <li><a href="#servicios">Paquetes Completos</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Enlaces</h3>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <ul class="footer-links">
+            <li><a href="tel:+51931992909">+51 931 992 909</a></li>
+            <li><a href="mailto:jesuspp924@gmail.com">jesuspp924@gmail.com</a></li>
+            <li><a href="https://wa.me/51931992909">WhatsApp</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="copyright">
-      <p>&copy; <span id="year"></span> El Bar de Pinzón. Todos los derechos reservados.</p>
+    
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="current-year"></span> El Bar de Pinzón. Todos los derechos reservados.</p>
+        <div class="legal-links">
+          <a href="#">Políticas de Privacidad</a>
+          <a href="#">Términos de Servicio</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- WhatsApp -->
-  <a href="https://wa.me/931992909" class="whatsapp-float" target="_blank">
+  <!-- Chatbot Flotante -->
+  <button id="chatbot-trigger" aria-label="Abrir chat">
+    <i class="fas fa-comment-dots"></i>
+  </button>
+  
+  <!-- WhatsApp Flotante Mejorado -->
+  <a href="https://wa.me/51931992909" id="whatsapp-float" class="pulse" aria-label="Contactar por WhatsApp">
     <i class="fab fa-whatsapp"></i>
+    <span class="tooltip">¡Contáctanos!</span>
   </a>
 
-  <!-- JavaScript -->
+  <!-- JavaScript Optimizado -->
   <script>
-  // Menú móvil
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  menuToggle.addEventListener('click', () => {
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-  });
-
-  // Smooth scrolling
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
+    // Menú móvil
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.innerHTML = navLinks.classList.contains('active') ? 
+        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Efecto navbar al hacer scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Tabs de servicios
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const tabId = link.getAttribute('data-tab');
+        
+        // Remover clase active de todos
+        tabLinks.forEach(l => l.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        
+        // Agregar clase active al seleccionado
+        link.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
       });
     });
-  });
-
-  // Actualizar año en el footer
-  document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Filtro de galería
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        
+        // Actualizar botones activos
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        // Filtrar items
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Carrusel de testimonios
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    const carouselDots = document.querySelectorAll('.carousel-dot');
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+      testimonialSlides.forEach(slide => slide.classList.remove('active'));
+      carouselDots.forEach(dot => dot.classList.remove('active'));
+      
+      testimonialSlides[index].classList.add('active');
+      carouselDots[index].classList.add('active');
+      currentSlide = index;
+    }
+    
+    carouselDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => showSlide(index));
+    });
+    
+    // Auto-avance del carrusel
+    setInterval(() => {
+      let nextSlide = (currentSlide + 1) % testimonialSlides.length;
+      showSlide(nextSlide);
+    }, 5000);
+    
+    // Calculadora de presupuesto
+    const calculatorForm = document.getElementById('calculator-form');
+    const calculateBtn = document.getElementById('calculate-btn');
+    const hoursSlider = document.getElementById('hours');
+    const hoursValue = document.getElementById('hours-value');
+    
+    hoursSlider.addEventListener('input', () => {
+      hoursValue.textContent = `${hoursSlider.value} horas`;
+    });
+    
+    calculateBtn.addEventListener('click', () => {
+      // Simulación de cálculo
+      const guests = parseInt(document.getElementById('guests').value);
+      const hours = parseInt(hoursSlider.value);
+      const services = Array.from(document.querySelectorAll('input[name="services"]:checked')).map(el => el.value);
+      
+      let basePrice = 0;
+      if (services.includes('bartender')) basePrice += 800;
+      if (services.includes('dj')) basePrice += 500;
+      if (services.includes('animacion')) basePrice += 400;
+      
+      const total = basePrice * (guests / 50) * (hours / 4);
+      document.getElementById('total-price').textContent = Math.round(total).toLocaleString();
+    });
+    
+    // Formulario de contacto
+    const contactForm = document.getElementById('event-form');
+    const formSuccess = document.getElementById('form-success');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const buttonText = submitButton.querySelector('.button-text');
+      const loadingSpinner = submitButton.querySelector('.loading-spinner');
+      
+      // Mostrar spinner
+      buttonText.style.display = 'none';
+      loadingSpinner.style.display = 'inline-block';
+      
+      // Simular envío
+      setTimeout(() => {
+        contactForm.reset();
+        contactForm.style.display = 'none';
+        formSuccess.style.display = 'block';
+      }, 1500);
+    });
+    
+    // Actualizar año en el footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Precarga de imágenes
+    function preloadImage(url) {
+      const img = new Image();
+      img.src = url;
+    }
+    
+    // Precargar imágenes importantes
+    window.addEventListener('load', () => {
+      preloadImage('img/bartender-service.webp');
+      preloadImage('img/dj-service.webp');
+      preloadImage('img/animacion-service.webp');
+    });
   </script>
 </body>
 </html>
